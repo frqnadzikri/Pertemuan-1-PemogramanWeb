@@ -102,7 +102,6 @@ main section:nth-of-type(2) {
 
     display: grid;
 
-    /* SEKARANG 4 KOLOM */
     grid-template-columns: repeat(4, 1fr);
 
     gap: 1rem;
@@ -150,6 +149,7 @@ table {
 
 th,
 td {
+
     text-align: left;
 
     padding: 0.65rem 0.75rem;
@@ -158,16 +158,19 @@ td {
 }
 
 thead {
+
     background-color: #176b4d;
 
     color: #fff;
 }
 
 tbody tr:nth-child(even) {
+
     background-color: #f7f9fb;
 }
 
 tbody tr:hover {
+
     background-color: #eaf5ef;
 }
 
@@ -191,6 +194,9 @@ td button {
     font-size: 0.85rem;
 }
 
+
+/* Tombol Edit */
+
 td button:first-of-type {
 
     background-color: #f0ad4e;
@@ -198,9 +204,22 @@ td button:first-of-type {
     color: #fff;
 }
 
+
+/* Tombol Hapus */
+
 td button:last-of-type {
 
     background-color: #d9534f;
+
+    color: #fff;
+}
+
+
+/* Tombol Detail */
+
+td button.detail {
+
+    background-color: #5bc0de;
 
     color: #fff;
 }
@@ -211,6 +230,7 @@ td button:last-of-type {
 /* ============================= */
 
 form p {
+
     margin-bottom: 1rem;
 }
 
