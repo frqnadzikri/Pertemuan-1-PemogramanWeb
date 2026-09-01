@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <title>SIMPUS-Mini | Tambah Buku</title>
+    <title>SIMPUS-Mini | Daftar Anggota</title>
 
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -26,25 +26,25 @@
                 </li>
 
                 <li>
-                    <a href="list.html">
+                    <a href="../buku/list.html">
                         Daftar Buku
                     </a>
                 </li>
 
                 <li>
-                    <a href="tambah.html">
+                    <a href="../buku/tambah.html">
                         Tambah Buku
                     </a>
                 </li>
 
                 <li>
-                    <a href="../anggota/list.html">
+                    <a href="list.html">
                         Daftar Anggota
                     </a>
                 </li>
 
                 <li>
-                    <a href="../anggota/tambah.html">
+                    <a href="tambah.html">
                         Tambah Anggota
                     </a>
                 </li>
@@ -60,123 +60,127 @@
 
         <section>
 
-            <h2>Tambah Buku</h2>
+            <h2>Daftar Anggota</h2>
 
-            <form>
+            <table>
 
-                <p>
+                <thead>
 
-                    <label for="judul">
-                        Judul
-                    </label>
+                    <tr>
 
-                    <input
-                        type="text"
-                        id="judul"
-                        name="judul"
-                        required>
+                        <th>No. Anggota</th>
 
-                </p>
+                        <th>Nama</th>
 
+                        <th>Alamat</th>
 
-                <p>
+                        <th>No. HP</th>
 
-                    <label for="pengarang">
-                        Pengarang
-                    </label>
+                        <th>Aksi</th>
 
-                    <input
-                        type="text"
-                        id="pengarang"
-                        name="pengarang"
-                        required>
+                    </tr>
 
-                </p>
+                </thead>
 
 
-                <p>
+                <tbody>
 
-                    <label for="tahun">
-                        Tahun Terbit
-                    </label>
+                    <tr>
 
-                    <input
-                        type="number"
-                        id="tahun"
-                        name="tahun"
-                        min="1900"
-                        max="2026"
-                        required>
+                        <td>A001</td>
 
-                </p>
+                        <td>Siti Aminah</td>
 
+                        <td>Malang</td>
 
-                <p>
+                        <td>0812xxxx</td>
 
-                    <label for="isbn">
-                        ISBN
-                    </label>
+                        <td>
 
-                    <input
-                        type="text"
-                        id="isbn"
-                        name="isbn">
+                            <button type="button">
+                                Edit
+                            </button>
 
-                </p>
+                            <button
+                                type="button"
+                                class="detail">
+                                Detail
+                            </button>
 
+                            <button type="button">
+                                Hapus
+                            </button>
 
-                <p>
+                        </td>
 
-                    <label for="stok">
-                        Stok
-                    </label>
-
-                    <input
-                        type="number"
-                        id="stok"
-                        name="stok"
-                        min="0"
-                        required>
-
-                </p>
+                    </tr>
 
 
-                <p>
+                    <tr>
 
-                    <label for="kategori">
-                        Kategori
-                    </label>
+                        <td>A002</td>
 
-                    <select
-                        id="kategori"
-                        name="kategori">
+                        <td>Budi Santoso</td>
 
-                        <option value="fiksi">
-                            Fiksi
-                        </option>
+                        <td>Batu</td>
 
-                        <option value="non-fiksi">
-                            Non-Fiksi
-                        </option>
+                        <td>0813xxxx</td>
 
-                        <option value="referensi">
-                            Referensi
-                        </option>
+                        <td>
 
-                    </select>
+                            <button type="button">
+                                Edit
+                            </button>
 
-                </p>
+                            <button
+                                type="button"
+                                class="detail">
+                                Detail
+                            </button>
+
+                            <button type="button">
+                                Hapus
+                            </button>
+
+                        </td>
+
+                    </tr>
 
 
-                <p>
+                    <tr>
 
-                    <button type="submit">
-                        Simpan
-                    </button>
+                        <td>A003</td>
 
-                </p>
+                        <td>Andi Pratama</td>
 
-            </form>
+                        <td>Malang</td>
+
+                        <td>0814xxxx</td>
+
+                        <td>
+
+                            <button type="button">
+                                Edit
+                            </button>
+
+                            <button
+                                type="button"
+                                class="detail">
+                                Detail
+                            </button>
+
+                            <button type="button">
+                                Hapus
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
 
         </section>
 
