@@ -31,6 +31,7 @@ a:hover {
 header {
     background-color: #176b4d;
     color: #fff;
+
     padding: 1rem 1.5rem;
 
     display: flex;
@@ -49,6 +50,7 @@ header nav ul {
     list-style: none;
 
     display: flex;
+
     gap: 1.25rem;
 
     margin: 0;
@@ -67,14 +69,19 @@ header nav a {
 
 main {
     max-width: 1000px;
+
     margin: 2rem auto;
+
     padding: 0 1.5rem;
 }
 
 section {
     background-color: #fff;
+
     border-radius: 8px;
+
     padding: 1.5rem;
+
     margin-bottom: 1.5rem;
 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -82,6 +89,7 @@ section {
 
 section h2 {
     margin-bottom: 1rem;
+
     color: #176b4d;
 }
 
@@ -91,29 +99,41 @@ section h2 {
 /* ============================= */
 
 main section:nth-of-type(2) {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    /* SEKARANG 4 KOLOM */
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 1rem;
 }
 
 main section:nth-of-type(2) article {
+
     background-color: #eaf5ef;
+
     border-radius: 8px;
+
     padding: 1.25rem;
+
     text-align: center;
 }
 
 main section:nth-of-type(2) article h3 {
+
     font-size: 0.95rem;
+
     color: #55677a;
+
     margin-bottom: 0.5rem;
 }
 
 main section:nth-of-type(2) article p {
+
     font-size: 1.8rem;
+
     font-weight: 700;
+
     color: #176b4d;
 }
 
@@ -124,18 +144,22 @@ main section:nth-of-type(2) article p {
 
 table {
     width: 100%;
+
     border-collapse: collapse;
 }
 
 th,
 td {
     text-align: left;
+
     padding: 0.65rem 0.75rem;
+
     border-bottom: 1px solid #e2e6ea;
 }
 
 thead {
     background-color: #176b4d;
+
     color: #fff;
 }
 
@@ -153,23 +177,31 @@ tbody tr:hover {
 /* ============================= */
 
 td button {
+
     padding: 0.35rem 0.7rem;
+
     margin-right: 0.35rem;
 
     border: none;
+
     border-radius: 4px;
 
     cursor: pointer;
+
     font-size: 0.85rem;
 }
 
 td button:first-of-type {
+
     background-color: #f0ad4e;
+
     color: #fff;
 }
 
 td button:last-of-type {
+
     background-color: #d9534f;
+
     color: #fff;
 }
 
@@ -183,21 +215,27 @@ form p {
 }
 
 form label {
+
     display: block;
+
     margin-bottom: 0.35rem;
 
     font-weight: 600;
+
     color: #444;
 }
 
 form input,
 form select {
+
     width: 100%;
+
     max-width: 400px;
 
     padding: 0.55rem 0.7rem;
 
     border: 1px solid #cdd4da;
+
     border-radius: 4px;
 
     font-size: 1rem;
@@ -209,7 +247,9 @@ form select {
 /* ============================= */
 
 form button[type="submit"] {
+
     background-color: #176b4d;
+
     color: #fff;
 
     border: none;
@@ -224,6 +264,7 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
+
     background-color: #0f4d37;
 }
 
@@ -233,6 +274,7 @@ form button[type="submit"]:hover {
 /* ============================= */
 
 footer {
+
     text-align: center;
 
     padding: 1.25rem;
