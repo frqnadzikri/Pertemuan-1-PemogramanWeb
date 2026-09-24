@@ -1,6 +1,5 @@
 <?php
 // LATIHAN 3: halaman sementara untuk mengintip isi $_SESSION.
-// Hapus file ini setelah latihan selesai.
 $page_title = "Debug Session";
 include __DIR__ . '/includes/header.php';
 ?>
