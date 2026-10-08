@@ -27,9 +27,23 @@ try {
         throw new Exception('Stok buku tidak tersedia.');
     }
 
+    // Validasi bisnis: anggota yang masih punya peminjaman aktif lebih dari
+    // 14 hari (terlambat) tidak boleh meminjam buku baru.
+    // Di PostgreSQL, DATE - DATE menghasilkan selisih hari (integer).
+    $cekTelat = $pdo->prepare(
+        "SELECT COUNT(*) FROM peminjaman
+         WHERE anggota_id = :anggota_id
+           AND status = 'dipinjam'
+           AND (CURRENT_DATE - tanggal_pinjam) > 14"
+    );
+    $cekTelat->execute(['anggota_id' => $anggotaId]);
+    if ((int) $cekTelat->fetchColumn() > 0) {
+        throw new Exception('Anggota memiliki peminjaman terlambat lebih dari 14 hari. Kembalikan buku terlebih dahulu.');
+    }
+
     $insert = $pdo->prepare(
-        "INSERT INTO peminjaman (buku_id, anggota_id, tanggal_pinjam, status)
-         VALUES (:buku_id, :anggota_id, CURRENT_DATE, 'dipinjam')"
+        "INSERT INTO peminjaman (buku_id, anggota_id, tanggal_pinjam, tanggal_jatuh_tempo, status)
+         VALUES (:buku_id, :anggota_id, CURRENT_DATE, (CURRENT_DATE + INTERVAL '14 days')::date, 'dipinjam')"
     );
     $insert->execute(['buku_id' => $bukuId, 'anggota_id' => $anggotaId]);
 

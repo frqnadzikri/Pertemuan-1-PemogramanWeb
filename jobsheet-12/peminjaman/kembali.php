@@ -9,7 +9,8 @@ unset($_SESSION['flash']);
 
 $keyword = trim($_GET['q'] ?? '');
 
-$sqlDasar = "SELECT p.id, b.judul, a.nama, p.tanggal_pinjam
+$sqlDasar = "SELECT p.id, b.judul, a.nama, a.no_hp, p.tanggal_pinjam, p.tanggal_jatuh_tempo,
+                    (CURRENT_DATE > p.tanggal_jatuh_tempo) AS terlambat
              FROM peminjaman p
              JOIN buku b ON b.id = p.buku_id
              JOIN anggota a ON a.id = p.anggota_id
@@ -45,22 +46,31 @@ $daftarAktif = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <thead>
                     <tr>
                         <th>Anggota</th>
+                        <th>No. HP</th>
                         <th>Buku</th>
                         <th>Tgl Pinjam</th>
+                        <th>Jatuh Tempo</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (empty($daftarAktif)): ?>
                     <tr>
-                        <td colspan="4">Tidak ada peminjaman aktif.</td>
+                        <td colspan="6">Tidak ada peminjaman aktif.</td>
                     </tr>
                     <?php else: ?>
                         <?php foreach ($daftarAktif as $trx): ?>
                         <tr>
                             <td><?php echo e($trx['nama']); ?></td>
+                            <td><?php echo e($trx['no_hp'] ?? '-'); ?></td>
                             <td><?php echo e($trx['judul']); ?></td>
                             <td><?php echo $trx['tanggal_pinjam']; ?></td>
+                            <td>
+                                <?php echo $trx['tanggal_jatuh_tempo']; ?>
+                                <?php if ($trx['terlambat']): ?>
+                                    <strong class="flash-error">(Terlambat)</strong>
+                                <?php endif; ?>
+                            </td>
                             <td>
                                 <form method="post" action="proses_kembali.php">
                                     <?php echo csrf_field(); ?>
